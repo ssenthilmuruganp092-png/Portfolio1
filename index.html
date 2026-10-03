@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senthil Murugan P | Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Senthil Murugan P: full-stack developer building React, Node.js and MongoDB applications.">
+<meta property="og:title" content="Senthil Murugan P | Full-Stack Developer">
+<meta property="og:description" content="React, Node.js, Express and MongoDB projects.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF3F7; --panel:#FFFFFF; --ink:#12263A; --muted:#51657A;
+  --line:#C9D6E2; --signal:#1B5FD1; --signal-ink:#FFFFFF; --warm:#E59A12;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0F1B2A; --panel:#162639; --ink:#E8EFF6; --muted:#9DB0C4; --line:#2A3F56; --signal:#6AA6FF; --signal-ink:#0F1B2A; --warm:#F2B544}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:72px 0 8px}
+h1,h2,h3{font-family:var(--head);line-height:1.1}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:28px}
+p{max-width:68ch}
+.muted{color:var(--muted)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px 22px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+nav b{font-family:var(--head);font-size:1.1rem}
+nav ul{display:flex;gap:18px;list-style:none;padding:0;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-size:.95rem;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:64px 0 24px}
+.hero .wrap{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);font-weight:800;letter-spacing:-.03em}
+.role{font-family:var(--head);font-size:clamp(1.2rem,3vw,1.6rem);color:var(--signal);margin:14px 0 18px;font-weight:500}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:500;border:2px solid var(--signal)}
+.btn.main{background:var(--signal);color:var(--signal-ink)}
+.btn:hover{transform:translateY(-2px)}
+.photo{width:220px;height:220px;border-radius:50%;border:4px solid var(--warm);object-fit:cover;background:var(--panel);display:grid;place-items:center;font:800 3.4rem var(--head);color:var(--signal)}
+.strip{margin-top:44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;font-size:.95rem;color:var(--muted);display:flex;gap:10px 34px;flex-wrap:wrap}
+.strip span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--warm);margin-right:9px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px 32px}
+.skills h3{font-size:1.05rem;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--panel);padding:3px 11px;border-radius:99px;font-size:.88rem}
+
+/* featured */
+.feat{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;padding:30px 0;border-top:1px solid var(--line)}
+.feat:nth-child(even) .shot{order:2}
+.shot{aspect-ratio:16/9;border-radius:10px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(135deg,var(--signal),var(--warm));display:grid;place-items:center;color:var(--signal-ink);font:700 1.1rem var(--head);padding:14px;text-align:center}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.feat h3{font-size:1.6rem;margin-bottom:10px}
+.links{display:flex;gap:16px;margin-top:14px;font-weight:500}
+.links a{color:var(--signal)}
+
+/* filter + grid */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{font:inherit;font-size:.92rem;padding:6px 16px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--signal);color:var(--signal-ink);border-color:var(--signal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card .shot{border-radius:0;border:0;border-bottom:1px solid var(--line);font-size:.95rem}
+.card div.b{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:1.15rem}
+.card p{font-size:.93rem;color:var(--muted)}
+.card .links{margin-top:auto;padding-top:6px;font-size:.93rem}
+
+/* timeline */
+.tl{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:26px}
+.tl h3{font-size:1.15rem}
+.tl small{color:var(--muted);display:block;margin-bottom:4px}
+
+footer{margin-top:80px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.92rem}
+.contact a.big{font:700 clamp(1.3rem,4vw,2rem) var(--head);color:var(--signal);word-break:break-all}
+
+@media (max-width:760px){
+  .hero .wrap,.feat{grid-template-columns:1fr}
+  .feat:nth-child(even) .shot{order:0}
+  .photo{width:150px;height:150px;font-size:2.4rem;order:-1}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b>Senthil Murugan P</b>
+  <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#journey">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <h1>Senthil Murugan P</h1>
+    <p class="role">Full-stack developer</p>
+    <p>I build responsive web apps with React, Node.js and Express, and connect them to real APIs and databases. I study Electronics and Communication Engineering at Mepco Schlenk Engineering College, and I'm looking for a developer role or internship.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">View projects</a>
+      <a class="btn" href="Senthil_Murugan_P_Resume.pdf" download>Download resume</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+  </div>
+  <!-- Put your photo at images/profile.jpg. Initials show until it loads. -->
+  <img class="photo" src="images/profile.jpg" alt="Senthil Murugan P" onerror="this.outerHTML='<div class=&quot;photo&quot; role=&quot;img&quot; aria-label=&quot;Senthil Murugan P&quot;>SM</div>'">
+</div>
+<div class="wrap"><div class="strip">
+  <span>Based in Dindigul, Tamil Nadu</span>
+  <span>B.E. ECE, 2023 to 2027</span>
+  <span>Winter intern, India Space Lab</span>
+  <span>HackerRank 5-star in Problem Solving</span>
+</div></div></header>
+
+<main>
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills" id="skillList"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Main projects</h2>
+  <div id="featured"></div>
+</div>
+<div class="wrap" style="margin-top:60px">
+  <h2>More projects</h2>
+  <div class="filters" id="filters" role="group" aria-label="Filter projects by technology"></div>
+  <div class="grid" id="grid"></div>
+  <p class="muted" id="empty" hidden style="margin-top:14px">No projects match this filter yet.</p>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <h2>Experience and learning</h2>
+  <div class="tl">
+    <div><small>2024 to present, hybrid</small><h3>Winter intern, India Space Lab</h3><p>Studying satellite telemetry transmission protocols, embedded flight architectures and real-time sensor calibration.</p></div>
+    <div><small>2023 to 2027</small><h3>B.E. Electronics and Communication Engineering</h3><p>Mepco Schlenk Engineering College, Sivakasi. CGPA 6.90 / 10 (till 6th semester).</p></div>
+    <div><small>2022 to 2023</small><h3>Higher Secondary Certificate</h3><p>C.D. Higher Secondary School, Puliyampatti. 82.5%.</p></div>
+    <div><small>2025</small><h3>Fundamentals of Artificial Intelligence</h3><p>Framework deployment, optimization models and AI systems.</p></div>
+    <div><small>2024</small><h3>Operating System Fundamentals</h3><p>Memory allocation, process scheduling and kernel architecture.</p></div>
+    <div><small>HackerRank</small><h3>5-star coder, Problem Solving and Python</h3><p>Earned through regular practice on algorithm and Python problems.</p></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's work together</h2>
+  <p class="muted" style="margin-bottom:14px">The quickest way to reach me is email.</p>
+  <a class="big" href="mailto:ssenthilmuruganp092@gmail.com">ssenthilmuruganp092@gmail.com</a>
+  <div class="btns">
+    <a class="btn" href="https://github.com/ssenthilmuruganp092-png" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/senthilmurugan-p-503648302" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="tel:+916383031720">Call +91 63830 31720</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Senthil Murugan P</div></footer>
+
+<script>
+/* ===== EDIT THIS SECTION ===== */
+const skills = {
+  "Languages": ["C","C++","Python","JavaScript (ES6+)","HTML5","CSS3"],
+  "Frontend": ["React.js","Responsive design"],
+  "Backend": ["Node.js","Express.js","REST APIs","JSON"],
+  "Database": ["MongoDB","MySQL"],
+  "Tools": ["Git","GitHub","VS Code","Linux"]
+};
+
+/* featured = shown large at the top. Replace "#" with your live and GitHub links.
+   Put screenshots in the images/ folder using the file names below. */
+const projects = [
+  {t:"E-Commerce Shopping Cart", f:true, tags:["React","Node.js"], img:"images/ecommerce-cart.png",
+   d:"Full-stack shopping cart with a responsive storefront and core cart features: add, remove and update items.", live:"#", repo:"#"},
+  {t:"Social Media Application", f:true, tags:["React","Node.js","API"], img:"images/social-media-app.png",
+   d:"Full-stack social app with an interactive React frontend and Express REST API backend for core networking features.", live:"#", repo:"#"},
+  {t:"Real-Time Weather and Media App", f:true, tags:["React","API"], img:"images/weather-media-app.png",
+   d:"Integrates OpenWeatherMap and OMDb APIs with asynchronous data handling, debounced search, dynamic routing and clear error states.", live:"#", repo:"#"},
+
+  {t:"Book Store (MERN Stack)", tags:["MERN","React","Node.js"], img:"images/book-store-mern.png", d:"Book store application built on MongoDB, Express, React and Node.js.", live:"#", repo:"#"},
+  {t:"Book Library Management System", tags:["Node.js"], img:"images/book-library.png", d:"System to manage a library's books and records.", live:"#", repo:"#"},
+  {t:"Electricity Board Connections", tags:["Node.js"], img:"images/electricity-board.png", d:"Application to manage electricity connection records and requests.", live:"#", repo:"#"},
+  {t:"Movie Search App", tags:["React","API"], img:"images/movie-search.png", d:"Search movies and view details using a REST API.", live:"#", repo:"#"},
+  {t:"Live Weather Application", tags:["React","API"], img:"images/live-weather.png", d:"Shows current weather for any city using a live weather API.", live:"#", repo:"#"},
+  {t:"Live News API", tags:["HTML/CSS/JS","API"], img:"images/live-news.png", d:"Fetches and displays the latest headlines from a news API.", live:"#", repo:"#"},
+  {t:"Todo List (React)", tags:["React"], img:"images/todo-react.png", d:"Todo application in React: add, complete and delete tasks.", live:"#", repo:"#"},
+  {t:"E-Commerce Layout (React)", tags:["React"], img:"images/ecommerce-react.png", d:"Responsive e-commerce page layout built from React components.", live:"#", repo:"#"},
+  {t:"E-Commerce Registration Signup", tags:["HTML/CSS/JS"], img:"images/ecommerce-signup.png", d:"Signup page for an e-commerce site with form validation.", live:"#", repo:"#"},
+  {t:"E-Commerce Page", tags:["HTML/CSS/JS"], img:"images/ecommerce-page.png", d:"Static e-commerce product page with a responsive layout.", live:"#", repo:"#"},
+  {t:"Gym Website", tags:["HTML/CSS/JS"], img:"images/gym-website.png", d:"Gym website with classes, plans and a registration form.", live:"#", repo:"#"},
+  {t:"Digital Resume", tags:["HTML/CSS/JS"], img:"images/digital-resume.png", d:"Online resume page built with HTML and CSS.", live:"#", repo:"#"},
+  {t:"Responsive Registration Form", tags:["HTML/CSS/JS"], img:"images/responsive-form.png", d:"Registration form that adapts to phone, tablet and desktop.", live:"#", repo:"#"},
+  {t:"User Registration Form", tags:["HTML/CSS/JS"], img:"images/user-registration.png", d:"User registration form with client-side validation.", live:"#", repo:"#"},
+  {t:"Todo List", tags:["HTML/CSS/JS"], img:"images/todo-list.png", d:"Todo list in plain JavaScript with add, complete and delete.", live:"#", repo:"#"}
+];
+/* ===== END EDIT SECTION ===== */
+
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shot = p => `<div class="shot"><img src="${p.img}" alt="${esc(p.t)} screenshot" loading="lazy" onerror="this.parentNode.textContent='${esc(p.t).replace(/'/g,"")}'"></div>`;
+const links = p => `<div class="links">${p.live!=="#"?`<a href="${p.live}" target="_blank" rel="noopener">Live demo</a>`:""}${p.repo!=="#"?`<a href="${p.repo}" target="_blank" rel="noopener">GitHub</a>`:""}</div>`;
+const tagChips = p => `<div class="chips">${p.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>`;
+
+document.getElementById("skillList").innerHTML = Object.entries(skills).map(([k,v]) =>
+  `<div><h3>${k}</h3><div class="chips">${v.map(s=>`<span class="chip">${s}</span>`).join("")}</div></div>`).join("");
+
+document.getElementById("featured").innerHTML = projects.filter(p=>p.f).map(p =>
+  `<article class="feat">${shot(p)}<div><h3>${esc(p.t)}</h3><p style="margin-bottom:12px">${esc(p.d)}</p>${tagChips(p)}${links(p)}</div></article>`).join("");
+
+const rest = projects.filter(p=>!p.f);
+const tags = ["All", ...new Set(rest.flatMap(p=>p.tags))];
+const grid = document.getElementById("grid"), filters = document.getElementById("filters"), empty = document.getElementById("empty");
+
+function render(tag){
+  const list = tag==="All" ? rest : rest.filter(p=>p.tags.includes(tag));
+  grid.innerHTML = list.map(p => `<article class="card">${shot(p)}<div class="b"><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p>${tagChips(p)}${links(p)}</div></article>`).join("");
+  empty.hidden = list.length > 0;
+  filters.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.textContent===tag));
+}
+filters.innerHTML = tags.map(t=>`<button type="button">${t}</button>`).join("");
+filters.addEventListener("click", e => { if(e.target.tagName==="BUTTON") render(e.target.textContent); });
+render("All");
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
